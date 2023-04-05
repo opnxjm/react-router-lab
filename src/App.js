@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { Route, Routes } from "react-router-dom";
+import CalendarPage from "./pages/Calendar";
+import HomePage from "./pages/Homepage";
+import TodayPage from "./pages/Todaypage";
+import TodoPage from "./pages/TodoPage";
+import BottomNav from "./components/BottomNav";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  return(
+    <Routes>
+      <Route exect path = "/" element={<HomePage />} />
+      <Route path = "/todo" element={<TodoPage />} />
+      <Route path = "/today" element={<TodayPage />} />
+      <Route path = "/calendar" element={<CalendarPage />} />
+    </Routes>
   );
 }
-
 export default App;
